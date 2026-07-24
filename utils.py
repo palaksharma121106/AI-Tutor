@@ -1,19 +1,3 @@
-"""
-utils.py
----------
-Core logic for the AI Tutor app.
-
-This file is written in a step-by-step, "notebook" style so every function
-can be tested on its own (in a Jupyter cell, a Python REPL, or by running
-`python utils.py` directly).
-
-Pipeline:
-    topic + context -> build_prompt() -> call_llm() -> parse_response() -> structured dict
-
-main.py (Streamlit) should ONLY ever call get_tutor_response(...).
-It should never build prompts or talk to Groq directly.
-"""
-
 import os
 import json
 import re
@@ -290,7 +274,7 @@ def get_tutor_response(topic: str, course_context: str = "", level: str = "Begin
 
 
 # ---------------------------------------------------------------------------
-# Step 6: Manual test block - only runs when executing `python utils.py`
+# Step 6: Manual test block 
 # ---------------------------------------------------------------------------
 
 if __name__ == "__main__":

@@ -1,12 +1,3 @@
-"""
-main.py
---------
-Streamlit UI for the AI Tutor app.
-
-This file handles ONLY input, buttons, layout, and display.
-All AI logic (prompt building, Groq calls, JSON parsing) lives in utils.py.
-"""
-
 import streamlit as st
 import plotly.graph_objects as go
 
@@ -72,9 +63,6 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# ---------------------------------------------------------------------------
-# Session state - keeps results & quiz answers alive between reruns
-# ---------------------------------------------------------------------------
 
 if "tutor_data" not in st.session_state:
     st.session_state.tutor_data = None
@@ -83,7 +71,7 @@ if "topic" not in st.session_state:
     st.session_state.topic = ""
 
 # ---------------------------------------------------------------------------
-# Sidebar - personalization controls
+# Personalization controls
 # ---------------------------------------------------------------------------
 
 with st.sidebar:
@@ -110,7 +98,7 @@ with st.sidebar:
     st.caption("Model: `llama-3.1-8b-instant` via Groq")
 
 # ---------------------------------------------------------------------------
-# Hero / input section
+# Input section
 # ---------------------------------------------------------------------------
 
 st.markdown(
@@ -153,7 +141,7 @@ if generate_clicked:
                 st.error(f"Something went wrong while calling the AI: {e}")
 
 # ---------------------------------------------------------------------------
-# Display section - only shown once we have a result
+# Display section 
 # ---------------------------------------------------------------------------
 
 data = st.session_state.tutor_data
