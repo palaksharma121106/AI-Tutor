@@ -3,6 +3,7 @@ import json
 import re
 from dotenv import load_dotenv
 from groq import Groq
+import streamlit as st
 
 # ---------------------------------------------------------------------------
 # Step 1: Environment & client setup
@@ -21,11 +22,12 @@ def get_groq_client() -> Groq:
         >>> client = get_groq_client()
         >>> print(client)
     """
-    api_key = os.getenv("GROQ_API_KEY")
+    api_key = os.getenv("GROQ_API_KEY") or st.secrets.get("GROQ_API_KEY")
+    
     if not api_key:
         raise ValueError(
             "GROQ_API_KEY not found. Please add it to your .env file "
-            "(see .env.example)."
+            "or Streamlit Cloud Secrets."
         )
     return Groq(api_key=api_key)
 
