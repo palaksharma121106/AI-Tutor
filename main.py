@@ -95,7 +95,7 @@ with st.sidebar:
         "'Variables in C', 'Pointers'), the tutor auto-generates a "
         "runnable code example with a walkthrough."
     )
-    st.caption("Model: `llama-3.1-8b-instant` via Groq")
+    
 
 # ---------------------------------------------------------------------------
 # Input section
