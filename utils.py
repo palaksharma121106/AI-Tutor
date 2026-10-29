@@ -11,7 +11,7 @@ import streamlit as st
 
 load_dotenv()
 
-MODEL_NAME = "llama-3.1-8b-instant"
+MODEL_NAME = "llama-3.3-70b-versatile"
 
 
 def get_groq_client() -> Groq:
